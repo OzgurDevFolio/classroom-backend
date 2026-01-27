@@ -1,10 +1,8 @@
 import express from 'express'
 import subjectsRouter from './routes/subjects'
 import cors from 'cors'
-import helmet from 'helmet'
 
 const app = express()
-app.use(helmet())
 const PORT = 8000
 
 app.use(
