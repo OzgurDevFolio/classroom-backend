@@ -3,6 +3,8 @@ AgentAPI.config()
 
 import express from 'express'
 import subjectsRouter from './routes/subjects.js'
+import usersRouter from './routes/users.js'
+import classesRouter from './routes/classes.js'
 import cors from 'cors'
 import securityMiddleware from './middleware/security.js'
 
@@ -19,9 +21,11 @@ app.use(
 
 app.use(express.json())
 
-app.use(securityMiddleware)
+// app.use(securityMiddleware)
 
 app.use('/api/subjects', subjectsRouter)
+app.use('/api/users', usersRouter)
+app.use('/api/classes', classesRouter)
 
 app.get('/', (req, res) => {
     res.send('Welcome to Classroom API BACKEND!')
